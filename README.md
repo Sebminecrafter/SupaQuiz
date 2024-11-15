@@ -15,7 +15,8 @@ I don't have the time to make them use anything else. If you really want to make
 <h5>The Code</h5>
 The start is just using message boxes and then loading the quiz selection input box
 Here is an example of how the basics of the input box works:
-```
+
+``` VBScript
   While 1=1 Do
     userinput=inputbox("Would you like option 1, 2, or 3?", "Select Option", "Type number here...")
     If userinput="1" Then
