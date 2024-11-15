@@ -1,0 +1,4 @@
+set wshell = CreateObject("WScript.Shell")
+Set objIE = CreateObject("InternetExplorer.Application"): imagePath = CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName)&"\assets\splash.png": htmlContent = "<html><body style='margin:0;'><img src='"&imagePath&"' style='width:100%; height:100%; object-fit:cover;'></body></html>": objIE.Visible = True: objIE.Fullscreen = True: objIE.Navigate "about:blank": Do While objIE.Busy Or objIE.ReadyState <> 4:     WScript.Sleep 100: Loop: objIE.Document.Write(htmlContent): objIE.Document.Close: wshell.AppActivate objIE.HWND: WScript.Sleep 1000: objIE.Quit: Set objIE=Nothing
+MsgBox "Welcome to SupaQuiz!", 0, "SupaQuiz"
+wshell.Run "launcher.vbs"
